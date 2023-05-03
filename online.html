@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Check Online Status</title>
+  </head>
+  <body>
+    <div style="height:200px;border:1px solid red;visibility: hidden;">
+    <h1>Online Status:</h1>
+    <p id="status"></p>
+</div>
+    
+    <script>
+      if(navigator.onLine) {
+        document.getElementById('status').innerText = "Online";
+      } else {
+        document.getElementById('status').innerText = "Offline";
+      }
+    </script>
+  </body>
+</html>

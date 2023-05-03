@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<style>
+    .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+    }
+
+    /* .tooltip:hover .tooltiptext {
+        visibility: visible;
+    } */
+
+    .lefttool {
+        width: 100px;
+        height: 50px;
+        visibility: hidden;
+        border: 2px solid red;
+
+    }
+
+    #left {
+        width: 200px;
+        height: 50px;
+        border: 3px solid red;
+        margin-right: 30px;
+        position: relative;
+        display: inline-block;
+    }
+
+    #left:hover .lefttool {
+        visibility: visible;
+    }
+
+    .righttool {
+        width: 100px;
+        height: 50px;
+        visibility: hidden;
+        border: 2px solid red;
+
+    }
+
+    #right {
+        width: 200px;
+        height: 50px;
+        border: 3px solid red;
+        margin-right: 30px;
+        position: relative;
+        display: inline-block;
+    }
+
+    #right:hover .righttool {
+        visibility: visible;
+    }
+
+    .toptool {
+        width: 50px;
+        height: 50px;
+        visibility: hidden;
+        border: 2px solid red;
+        position: top;
+
+
+    }
+
+    #top {
+        width: 100px;
+        height: 50px;
+        border: 3px solid red;
+        margin-right: 30px;
+        position: relative;
+        display: inline-block;
+        /* padding-top:-100px; */
+    }
+
+    #top:hover .toptool {
+        visibility: visible;
+    }
+
+    .bottomtool {
+        width: 200px;
+        height: 50px;
+        visibility: hidden;
+        border: 2px solid red;
+        position: bottom;
+
+
+    }
+
+    #bottom {
+        width: 100px;
+        height: 50px;
+        border: 3px solid red;
+        margin-right: 30px;
+        position: relative;
+        display: inline-block;
+        /* padding-top: -100px; */
+
+    }
+
+    #bottom:hover .bottomtool {
+        visibility: visible;
+    }
+</style>
+
+<body style="text-align:center;">
+
+    <h1>TOOL TIP</h1>
+
+    <button id="left">
+        <span class="lefttool">Left tooltip</span>
+        Left </button>
+    <button id="right">
+
+        Right
+        <span class="righttool">Right tooltip</span>
+    </button>
+    <button id="top">
+        <span class="toptool">Top tooltip</span>
+
+        Top
+
+    </button>
+    <button id="bottom">
+
+
+        Bottom
+        <span class="bottomtool">Bottom tooltip</span>
+
+    </button>
+</body>
+
+</html>

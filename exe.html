@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #navigate {
+            width: 90%;
+            height: 80px;
+            background-color: yellow;
+            color: black;
+            font-size: 30px;
+            padding-left: 20px;
+            padding-top: 2px;
+        }
+
+        #sub {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(1, 400px);
+            /* border: 1px solid red; */
+            margin-top: 20px;
+            gap: 40px;
+            width: 92%;
+
+        }
+
+        #sub>div {
+            /* border: 1px solid red; */
+            font-size: 30px;
+            padding-left: 10px;
+
+        }
+
+        #sub>div:nth-child(1) {
+            background-color: blue;
+        }
+
+        #sub>div:nth-child(2) {
+            background-color: rgb(255, 47, 127);
+        }
+
+        @media all and (min-width:360px) and (max-width:480px) {
+            #sub {
+                width: 92%;
+                grid-template-columns: repeat(1, 1fr);
+                grid-template-rows: repeat(2, 400px);
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navigate">
+        <p>Navigation</p>
+    </div>
+    <div id="sub">
+        <div>
+            <P>LEFT BOX</P>
+        </div>
+        <div>
+            <P>RIGHT BOX</P>
+        </div>
+    </div>
+
+</body>
+
+</html>

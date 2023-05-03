@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
+    <style>
+        nav {
+            display: flex;
+            gap: 100px;
+            height: 50px;
+        }
+
+        nav>div {
+            width: 50%;
+            padding-right: 50px;
+            border: 1px solid black
+        }
+
+        #freecourse {
+            margin-top: 20px;
+            height: 50px
+        }
+
+        nav:hover~.smalldiv {
+            display: inline-table;
+            /* border: 1px solid red; */
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+
+        .smalldiv {
+            width: 200px;
+            height: 100px;
+
+            margin-left: 60%;
+            display: none;
+            padding-left: 20px;
+            transform: scale(1);
+
+
+        }
+
+        .smalldiv:hover {
+            display: inline-table;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        freecourse:focus {
+            /* display: block; */
+        }
+
+        #freecourse:hover+.smalldiv {
+            display: block;
+
+        }
+
+        #symbole:hover {
+
+            border: 1px solid red;
+
+        }
+
+        @media all and(min-width:370px) and (max-width:800px) {
+            .sidediv> {
+                color: yellow;
+                display: block;
+                height: 200px;
+                width: 100%;
+            }
+
+            .logo {
+                display: none
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <img src="https://www.masaischool.com/img/navbar/logo.svg" />
+        </div>
+        <div style="display: flex;justify-content: space-between;gap: 10px" id="sidediv">
+            <h5 class="hoverme">COURSES</h5>
+            <h5 id="freecourse">FREE COURSES
+                <span id="symbole">^</span>
+            </h5>
+            <h5>FEES&PAP</h5>
+            <h5>EVENTS & CONTENTS</h5>
+
+        </div>
+    </nav>
+    <div class="smalldiv">
+        <h5>jeevan</h5>
+        <h5>neha</h5>
+        <h5>aloor</h5>
+
+    </div>
+</body>
+
+</html>
+<script>
+    // let innwidth = window.innerWidth
+    // let innheight = window.innerHeight
+    // console.log(innwidth)
+    // console.log(innheight)
+</script>

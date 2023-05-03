@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="myChart"></canvas>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
+                'October', 'November', 'December'
+            ],
+
+            datasets: [{
+                label: "attendance",
+
+                data: [40, 30, 40, 50, 70, 30, 90, 55, 30, 78, 25, 30],
+                backgroundColor: ["black","yellow","blue","grey","green","red"],
+
+
+            }, 
+            // {
+            //     label: "performance",
+            //     data: [70, 45, 63, 10, 56, 78, 45, 89, 78, 67, 29, 40],
+            //     backgroundColor: "red",
+
+            // }
+            ]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
+</html>

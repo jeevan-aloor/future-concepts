@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>admin</h1>
+    <form class="formsubmit" >
+        <select id="choose">
+            <option>select one</option>
+            <option>Family</option>
+            <option>Deluxe</option>
+            <option>Suite</option>
+        </select>
+        <input placeholder="Image URL" id="image" />
+        <label>AC</label>
+        <input type="radio" value="AC" id="ac" />
+        <label>NONAC</label>
+        <input type="radio" value="NONAC" id="nonac" />
+        <select id="single">
+
+            <option>Single</option>
+            <option>Double</option>
+        </select>
+        <input placeholder="No of adults" id="adults" />
+        <input placeholder="Max capacity" id="capacity" />
+        <input placeholder="Cost per night in Rs" id="cost" />
+        <input type="submit" onclick="addHotels()" />
+    </form>
+</body>
+
+</html>
+<script src="admin.js"></script>

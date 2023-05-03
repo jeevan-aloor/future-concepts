@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .addimg {
+            width: 70%;
+            height: 400%;
+            border: 1px solid red;
+            margin: auto;
+            display: flex;
+        }
+
+        #maindiv {
+            width: 80%;
+            height: 1500px;
+            border: 1px solid red;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        #maindiv>div:nth-child(4)>div>img {
+            height: 300px;
+
+        }
+
+        .imggg {
+            height: 100%;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>hotels</h1>
+    <h3>filter</h3>
+    <select id="typeofroom" onchange="filter()">
+        <option value="">select type</option>
+        <option>Family</option>
+        <option>Deluxe</option>
+        <option>Suite</option>
+    </select>
+    <select>
+        <option>Ascending</option>
+        <option>Descending</option>
+    </select>
+    <div id="buttonsdiv">
+
+    </div>
+    <div id="maindiv" style="border: 1px solid red">
+        <!-- <div style="border: 1px solid red"></div>
+        <div style="border: 1px solid red"></div>
+        <div style="border: 1px solid red"></div>
+        <div style="border: 1px solid red"></div> -->
+
+    </div>
+
+</body>
+
+</html>
+<script src="hotels.js"></script>

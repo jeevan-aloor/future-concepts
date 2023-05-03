@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        #container {
+            width: 205px;
+            height: 200px;
+            /* border: 1px solid red; */
+            overflow: scroll;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            margin-left: 890px;
+            margin-top: 30px;
+        }
+
+        input {
+            width: 200px;
+        }
+
+        #side {
+            display: flex;
+            margin-bottom: 20px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            background-color: brown;
+            color: white;
+        }
+
+        #side>img {
+            width: 70px;
+            height: 80px;
+            justify-content: space-between;
+            margin-right: 20px;
+        }
+
+        #head {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: 50px;
+            gap: 10px;
+            width: 90%;
+            background-color: black;
+            color: white;
+            margin: auto;
+        }
+
+        #head>div {
+            /* border: 1px solid red; */
+        }
+
+        #head>div:nth-child(1) {
+            background-color: black;
+        }
+
+        #head>div {
+            background-color: black;
+        }
+
+        #head>div:last-child>input {
+            border: none;
+            margin-top: 20px;
+            margin-left: 150px;
+            background-color: black;
+            border-bottom: 1px solid red;
+            font-size: 20px;
+            color: white;
+        }
+
+        #display {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 400px;
+            gap: 20px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+        }
+
+        #display>div:nth-child(1) {
+            color: white;
+            text-align: center;
+        }
+
+        #display>div:nth-child(2) {
+            padding-right: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="head">
+        <div>
+            <img src="https://secure-media.hotstarext.com/web-assets/prod/images/brand-logos/disney-hotstar-logo-dark.svg" alt="" />
+        </div>
+        <div>
+            <p>TV</p>
+        </div>
+        <div>
+            <p>Movies</p>
+        </div>
+        <div>
+            <p>Sports</p>
+        </div>
+        <div>
+            <p>Disney+</p>
+        </div>
+        <div>
+            <input type="text" placeholder="Search" id="name" oninput="debounce(movies,1000)" />
+        </div>
+    </div>
+
+    <!-- <button id="but" onclick="movies()">Submit</button> -->
+
+    <div id="container"></div>
+    <div id="display">
+        <div>
+            <h1>Arjun Reddy</h1>
+            <p>2 hr 42 min romance A .Hindi</p>
+        </div>
+        <div>
+            <img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/700/600700-h" alt="" />
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    let id;
+
+    let movies_div = document.getElementById("container");
+    async function movies() {
+        let movieName = document.getElementById("name").value;
+
+        try {
+            let res = await fetch(
+                `http://www.omdbapi.com/?i=tt3896198&apikey=af36340e&s=${movieName}`
+            );
+
+            let data = await res.json();
+
+            console.log("data:", data);
+            let actual_Data = data.Search;
+            if (actual_Data != undefined) {
+                appendMovies(actual_Data);
+            }
+        } catch (error) {
+            console.log("error:", error);
+
+            let imageerorr = document.createElement("img");
+
+            movies_div.append(imageerorr)
+            appendMovies(data)
+
+        }
+    }
+    function appendMovies(data) {
+        movies_div.innerHTML = null;
+
+        data.forEach(function (ele) {
+            let div = document.createElement("div");
+            div.setAttribute("id", "side");
+            let image = document.createElement("img");
+            image.setAttribute("src", ele.Poster);
+            let name = document.createElement("p");
+            name.innerText = `${ele.Title} `;
+
+            div.append(image, name);
+            movies_div.append(div);
+        });
+    }
+    function debounce(func, delay) {
+        if (id) {
+            clearTimeout(id);
+        }
+        id = setTimeout(function () {
+            func();
+        }, delay);
+    }
+
+  //    function(){
+
+  //    }
+</script>

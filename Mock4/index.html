@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Home Page</h1>
+    <div id="main">
+        <div style="border: 1px solid red;width: 80%;height: 80%;margin: auto">
+            <div id="smalldiv">
+                <button class="logininput" id="loginbutton" onclick="loginFormShow()">Login</button>
+                <button class="logininput" id="registerbutton" onclick="registerFormShow()">Register</button>
+
+            </div>
+            <div id="loginform">
+                <input placeholder="email" id="loginemail" />
+                <input placeholder="password" id="loginpass" />
+            </div>
+            <div id="signupform">
+                <input placeholder="Username" id="regname" />
+                <input placeholder="email" id="regemail" />
+                <input placeholder="Password" id="regpass" />
+                <input placeholder="Repeat Password" id="regrepeatpass" />
+            </div>
+
+        </div>
+        <button id="logsubmitbutton" onclick="userLogin()">LOGIN</button>
+        <button id="regsubmitbutton" onclick="addUser()">REGISTER</button>
+
+
+    </div>
+
+</body>
+
+</html>
+<script src="index.js"></script>

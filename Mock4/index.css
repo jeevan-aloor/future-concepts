@@ -1,0 +1,69 @@
+#main{
+    width: 400px;
+    height: 400px;
+   
+    margin: auto;
+    padding: 20px;
+}
+#smalldiv{
+    width: 100%;
+    height: 30px;
+    margin: auto;
+   
+    display: flex
+
+}
+.logininput{
+    width: 50%;
+    height: 100%;
+   
+}
+#loginform>input{
+    width: 80%;
+    margin: auto;
+    height: 40px;
+    margin-top: 30px;
+   margin-left: 20px;
+   background-color: #edf2f4
+    
+
+}
+/* .logininput:focus{
+    background-color: #2b2d42;
+    color: #FFFFFF
+} */
+#logsubmitbutton,#regsubmitbutton{
+    width: 80%;
+    height: 40px;
+   
+    margin-left: 40px;
+    background-color: #3a86ff
+}
+#loginform{
+    height: 100%;
+    background-color: #2b2d42;
+  
+}
+/* .logininput:focus {
+    [
+
+    #loginform{
+        display: none;
+    }
+]
+} */
+#signupform>input{
+    width: 80%;
+    margin: auto;
+    height: 40px;
+    margin-top: 10px;
+   margin-left: 20px;
+   background-color: #edf2f4
+    
+
+}
+#signupform{
+    height: 100%;
+    background-color: #2b2d42
+
+}

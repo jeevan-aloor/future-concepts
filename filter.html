@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* body{
+            background-color: black;
+        } */
+        #search_results {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            /* grid-template-rows: repeat(13, 450px); */
+            margin-bottom: 100px;
+
+            gap: 50px;
+
+        }
+
+        input {
+            margin-bottom: 50px;
+            width: 400px;
+            height: 30px;
+            margin-left: 200px;
+            margin-top: 80px;
+            border-radius: 10px;
+        }
+
+        button {
+            height: 35px;
+            width: 80px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 50px;
+            color: black;
+
+
+        }
+
+        h1:hover {
+            color: blue;
+            font-size: 60px;
+            text-decoration: line-through;
+
+        }
+
+        #search_results>div {
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+
+        }
+
+
+        img {
+            width: 100%;
+            height: 70%;
+        }
+
+        #head {
+            display: flex;
+            height: 200px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+
+        #head>div:nth-child(1) {
+            width: 20%;
+            /* border: 1px solid red; */
+        }
+
+        #head>div:nth-child(2) {
+            width: 80%;
+            /* border: 1px solid red; */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="head">
+        <div>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJUAAACVCAMAAABmfEh9AAAAk1BMVEX/////AAAAAAApKSkkJCSysrIhISEZGRkXFxfCwsL19fX6+voGBga/v78UFBRfX1/Z2dno6OiVlZU5OTl3d3fu7u7/2dn/NDTR0dFISEj/qan/eHj/FxepqalNTU3/6en/8fGHh4cxMTH/4eH/u7v/jY3/cnL/X1//R0f/ISH/QUH/WVn/a2v/oKD/zc3/LS1paWm6mhDPAAADo0lEQVR4nO2X2XabMBBAFWmQzGJ2YkhrEpOkTdqm5f+/rjNSHOwUY4jbc/ow98HCWELXQhqNhGAYhmEYhmEYhmEYhmEYhmEYhmEYhmEYhmEY5n/h/uHm8cvXp83z1RGfN9++/3h8efh54ePDqqqCxa1efl1N8+nO1guQ44v3BAMHd/2iKdZLpR7POCEbWzGXUtbUN5bJ2JMyOVAfWMUQewulrj+ft7p6cZ0qucUyxXL0v2dSa1BKgdY6PbBaKbPU6maG1NUPWxXA9FjkkYqzUaumbQtQgEVzodWnOVZPt1R1FwNg0WudjM8rnNVehAMZVFV4mdXTHKvna6q6ljRIVQNxfvJxa7Tyj299wCp8N60241o2OqQFxGtRd2CoXxyQwI5IiLwVr1buS2gLZzWM31vDCat33d8/fDtpJRKNo+RFAKGock1LkZbatmm7VFRJ25RvVgVOLYoJbeNZq7XfSdlX5JQrbNj6i6yuxd3LyKp8sJXz2JT00YswkWBWYFRNEUPLVGSdWSVvVlKbmF65ltZKlTpSStKL37mGup6yuvvDCmP9nyvAWaUSmiqhnmiKlbnCD7smyaoAfWCF4cFNRGcldztQuggorEQ7rwNqeJrbESsMYt/f3b5xtSOI0hhkJnoDXSXKlZLVHCuzE6LVChvmEagAxxvU1NQat8IwthmzKk20lRgXwgZDVyg8ST5zrDx6/VQtwbDiGk5tjaesxO3ziJUnoaC4gAqmDKlXjPIzrbb2F6rlGlZ/baxSBaAwLqSDlTfbyv6Fwu4PvqS3udTq1LwKcXKAxjnbLbfyXq1069c0blNWi9YgruuV0q24yEpRoAOYtFoUr4SoXd5wkVXXEN3UvFoU252V9zGr/bzS/ZntRizbBwerD61BOazBMKumhmpRzjBYBUO8qpfFq9bGq1QWk1F0SX41WNHDmwATrn1sr3EfPLICFdkQ9Wq1dbG9ohytwzRCgpy0WpCLHljluJ1ta3yPLlCb3u+lOrAqtIo8D/SrlW62OS6+NnDLpaY/NfkG5+fth1YBpgvGAEQ+pevYYVTs9IEVWisjy4TOEb5RqpH4EeGIhUmkDKb345n/wOwzjrOS9kQh0oZOMpHNMenwE9f4U0vrX1KHVYtlL3qqvcbLrKTvtPVlCTU8f+iZex60uLyTyNbrOtxf1uH+p32F2suObmX+PmxWvp+eDw7/+uzMMAzDMAzDMAzDMAzDMAzDMAzDMAzDMAzDMMx/zW/VKUjaasbNTQAAAABJRU5ErkJggg=="
+                alt="">
+        </div>
+        <div>
+
+            <input type="text" id="query" onchange="filterFunc()">
+            <button onclick="getData()">search</button>
+
+        </div>
+
+
+
+    </div>
+    <!-- <button onclick="filterFunc()">filter</button>
+     -->
+     <input type="text" oninput="filterFunc()" id="filId">
+
+
+    <div id="search_results">
+
+
+    </div>
+</body>
+
+</html>
+<script src="filter.js"></script>

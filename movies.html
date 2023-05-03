@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        #container {
+            width: 205px;
+            height: 200px;
+            /* border: 1px solid red; */
+            overflow: scroll;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        input {
+            width: 200px;
+        }
+
+        #side {
+            display: flex;
+            margin-bottom: 20px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            background-color: red;
+            color: white;
+        }
+
+        #side>img {
+            width: 70px;
+            height: 80px;
+            justify-content: space-between;
+            margin-right: 20px;
+        }
+
+        input,
+        #container {
+            margin-left: 500px;
+            margin-top: 30px;
+        }
+
+        input {
+            background-color: cyan;
+            border: none;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        #container {
+            border-radius: 20px;
+        }
+
+        #but {
+            padding: 8px;
+            border: transparent;
+        }
+
+        body {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" placeholder="enetr movie name" id="name" oninput="movies()" />
+    <button id="but" onclick="movies()">Search</button>
+
+    <div id="container"></div>
+</body>
+
+</html>
+<script>
+    let movies_div = document.getElementById("container");
+    async function movies() {
+        let movieName = document.getElementById("name").value;
+        console.log("movieName:", movieName);
+        try {
+            let res = await fetch(
+                `http://www.omdbapi.com/?i=tt3896198&apikey=af36340e&s=${movieName}`
+            );
+
+            let data = await res.json();
+
+            console.log("data:", data);
+            let actual_Data = data.Search;
+            if (actual_Data != undefined) {
+                appendMovies(actual_Data);
+            }
+        } catch (error) {
+            console.log("error:", error);
+        }
+    }
+    function appendMovies(data) {
+        movies_div.innerHTML = null;
+
+        data.map((ele) => {
+            let div = document.createElement("div");
+            div.setAttribute("id", "side");
+            let image = document.createElement("img");
+            image.setAttribute("src", ele.Poster);
+            let name = document.createElement("p");
+            name.innerText = `${ele.Title} `;
+
+            div.append(image, name);
+            movies_div.append(div);
+        });
+    }
+
+    function debounce() { }
+
+
+
+</script>
